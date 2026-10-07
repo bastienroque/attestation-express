@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📄 Attestation Express
 
-## Getting Started
+A lightweight, modern web application designed for generating official **Sworn Statement of Non-Receipt** (Attestation sur l'honneur de non-réception) in PDF format. Built with **Next.js 16**, **React 19**, **Tailwind CSS v4**, and **pdf-lib**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Features
+
+- ⚡ **Instant PDF Generation**: Pure serverless PDF creation directly via Next.js Route Handlers using `pdf-lib`.
+- 🔒 **Secured Admin Area**: Basic HTTP Authentication middleware protecting `/admin` access.
+- ✍️ **Digital Signature**: In-browser canvas signing powered by `react-signature-canvas`.
+- 📌 **Company Stamp Upload**: Support for optional PNG/JPEG stamp uploads embedded seamlessly into the generated document.
+- 📄 **Flexible Workflow**: Supports both digital completion and offline manual print/stamp option before downloading.
+- 🔗 **Smart URL Query Pre-filling**: Pre-fill order parameters (`cmd`, `colis`, `date`, `exp`, `contenu`) via URL query parameters for streamlined customer onboarding.
+- 🛠️ **Admin Link Generator**: Dedicated tool at `/admin` for support representatives to generate shareable pre-filled client URLs.
+- 🎨 **Modern Design**: Custom localized UI styled with Tailwind CSS v4 and Google's **Poppins** typography.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Typography**: [Poppins](https://fonts.google.com/specimen/Poppins) via `next/font/google`
+- **PDF Engine**: [pdf-lib](https://pdf-lib.js.org/)
+- **Signature Pad**: [react-signature-canvas](https://github.com/szime/react-signature-canvas)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+## 🔑 Environment Variables
+
+To configure admin credentials for `/admin`, create a `.env.local` file:
+
+```env
+ADMIN_USER=admin
+ADMIN_PASSWORD=your_secure_password
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
